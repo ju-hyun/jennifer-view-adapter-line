@@ -30,7 +30,8 @@
 | line_token          | ○      | LINEアクセストークンを設定 | なし         | 
 | stickerPackageId    | ×      | ステッカーのパッケージID   | なし         | 
 | stickerId           | ×      | ステッカーID             | なし         |
-| notificationDisabled| ×      | true：メッセージ送信時に購読者に通知しない。ただし、LINEの通知をオフにしている場合は通知されません。 | false
+| notificationDisabled| ×      | true：メッセージ送信時に購読者に通知しない。ただし、LINEの通知をオフにしている場合は通知されません。 | false |
+| eventLevel          | ×      | 通知するイベントのレベルを設定。設定したレベル以上のイベントが通知されます。ex) WARNINGを設定した場合、警告(WARNING)と致命的(FATAL)のイベントを通知　| NORMAL |
 
 * LINEアクセストークン発行するには、LINEアカウントが必要です。
 * LINEアクセストークンの発行は、[LINE Notify](https://notify-bot.line.me/ja/)で行えます。

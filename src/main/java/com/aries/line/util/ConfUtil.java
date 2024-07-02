@@ -36,15 +36,17 @@ public class ConfUtil {
 		lineProperties.setStickerPackageId(getValue("stickerPackageId", ""));
 		lineProperties.setStickerId(getValue("stickerId", ""));
 		lineProperties.setNotificationDisabled(getValue("notificationDisabled", "false"));
+		lineProperties.setEventLevel(getValue("eventLevel", "NORMAL"));
 	
 		return  lineProperties;
 	}
 
 	public static LineProp _getProperties() {
-		lineProperties.setLineToken(getValue("line_token", "plmkl30swb57RpEPSIwhADFfJVdvbD3umsUQaEDl8LK"));
+		lineProperties.setLineToken(getValue("line_token", "Jn37oXACTmDY7WwXvMrOlruHjOrfVMc5QXRJ809pptt"));
 		lineProperties.setStickerPackageId(getValue("stickerPackageId", ""));
 		lineProperties.setStickerId(getValue("stickerId", ""));
 		lineProperties.setNotificationDisabled(getValue("notificationDisabled", "false"));
+		lineProperties.setEventLevel("FATAL");
 	
 		return  lineProperties;
 	}

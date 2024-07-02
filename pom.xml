@@ -6,7 +6,7 @@
 
     <groupId>com.aries</groupId>
     <artifactId>line-adapter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>line-adapter</name>
     <description>Adapter to send Event notifications to a line channel or user</description>

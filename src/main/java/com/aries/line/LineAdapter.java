@@ -3,6 +3,7 @@ package com.aries.line;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 
 import com.aries.extension.data.EventData;
 import com.aries.extension.handler.EventHandler;
@@ -19,17 +20,25 @@ public class LineAdapter implements EventHandler{
 	 */
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
+	private final Map<String, Integer> EVENT_LEVEL = Map.of(
+		"NORMAL", 1,
+		"ERROR", 2,
+		"FATAL", 3
+	);
+
 	public void on(EventData[] eventData) {
 
 		LineProp lineProperties = ConfUtil.getProperties();
 
 		for (EventData event : eventData) {
-			String message = getBody(event);
-			String pretext = getPreText(event);
+			if ( EVENT_LEVEL.get(event.eventLevel) >= EVENT_LEVEL.get(lineProperties.getEventLevel()) ) {
+				String message = getBody(event);
+				String pretext = getPreText(event);
 
-			String result = new LineClient(lineProperties, message, pretext).push().trim();
-			if(!result.trim().equalsIgnoreCase("ok"))
-				LogUtil.error("Failed to push message to Line");
+				String result = new LineClient(lineProperties, message, pretext).push().trim();
+				if(!result.trim().equalsIgnoreCase("ok"))
+					LogUtil.error("Failed to push message to Line");
+			}
 		}
 	}
 

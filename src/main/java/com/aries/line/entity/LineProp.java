@@ -6,6 +6,16 @@ public class LineProp {
     private String stickerPackageId;
     private String stickerId;
     private String notificationDisabled;
+    private String eventLevel;
+
+	public String getEventLevel() {
+		return this.eventLevel;
+	}
+
+	public void setEventLevel(String eventLevel) {
+		this.eventLevel = eventLevel;
+	}
+
 
     public String getLineToken() {
         return this.lineToken;

@@ -32,6 +32,7 @@ The following table shows the available options for this adapter
 | stickerPackageId    | NO            | Package identifier    | None 
 | stickerId           | NO            | Sticker identifier    | None
 | notificationDisabled| NO            | true : Subscribers are not notified when sending messages. ¥n false : Subscriber is notified when the message is sent.However, if you turn off notifications on LINE, you will not be notified.          | false 
+| eventLevel          | NO            | Set the level of events to be notified. Events above the set level will be notified. | NORMAL
 
 
 The following is an example of the line message received from this adapter.
